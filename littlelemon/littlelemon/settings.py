@@ -40,6 +40,13 @@ INSTALLED_APPS = [
     'restaurant',
 ]
 
+STATIC_URL = '/static/'
+
+# If BASE_DIR is a pathlib Path:
+STATICFILES_DIRS = [ BASE_DIR / "static" ]
+# OR if BASE_DIR is a string path:
+# STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static") ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

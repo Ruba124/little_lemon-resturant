@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+  body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    color: #2e7d32; /* dark green text */
+  }
+  h1 {
+    color: #fbc02d; /* lemon yellow */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .column {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  p {
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu-price {
+    color: #2e7d32; /* green */
+    font-weight: bold;
+  }
+</style>
+
+<h1>Menu</h1>
+<!--Begin col-->
+<div class="column">
+   {% for item in menu %}
+   <p>
+      {{ item.name }}
+      <span class="menu-price">${{ item.price }}.00</span>
+   </p>
+   {% endfor %}
+</div>
+<!--End col-->
+{% endblock %}
