@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<section class="about-team">
+  <h2>Meet Our Chefs</h2>
+  <div class="team-container">
+    
+    <!-- Left side cards -->
+    <div class="chef-info left">
+      <div class="chef-card">
+        <h3>Xavi – Head Chef</h3>
+        <p class="desc">Xavi is the creative force behind our Mediterranean-inspired dishes, ensuring every plate is a masterpiece.</p>
+      </div>
+      <div class="chef-card">
+        <h3>Franco – Pastry Chef</h3>
+        <p class="desc">Franco specializes in delightful desserts, from lemon tarts to layered cakes, always bringing sweetness to the menu.</p>
+      </div>
+    </div>
+
+    <!-- Shared image -->
+    <div class="chef-image">
+      <img src="{% static 'img/chefs.png' %}" alt="Little Lemon Chefs">
+    </div>
+
+    <!-- Right side cards -->
+    <div class="chef-info right">
+      <div class="chef-card">
+        <h3>Emily – Sous Chef</h3>
+        <p class="desc">Emily manages the kitchen with precision and care, ensuring every detail of the dining experience is perfect.</p>
+      </div>
+      <div class="chef-card">
+        <h3>Lilly – Line Cook</h3>
+        <p class="desc">Lilly brings energy and speed to the kitchen, mastering the grill and preparing dishes with passion.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.about-team {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9; /* light bg */
+}
+
+.about-team h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #2e7d32;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.chef-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chef-info.left {
+  text-align: right;
+}
+
+.chef-info.right {
+  text-align: left;
+}
+
+.chef-image img {
+  max-width: 350px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Card styling */
+.chef-card {
+  background-color: #eaeaea; /* darker shade than background */
+  padding: 15px 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chef-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  background-color: #ddd; /* slightly darker on hover */
+}
+
+.chef-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.chef-card .desc {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+</style>
+{% endblock %}
